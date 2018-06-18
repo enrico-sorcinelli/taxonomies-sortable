@@ -14,8 +14,8 @@
 		var tagDelimiter = ( window.tagsSuggestL10n && window.tagsSuggestL10n.tagDelimiter ) || ',';
 
 		// Add sortable UI.
-		if ( 'object' === typeof( taxonomies_sortables_plugin_i18n.taxonomies ) ) {
-			$( taxonomies_sortables_plugin_i18n.taxonomies.join( ',' ) ).each( function() {
+		if ( 'object' === typeof( taxonomies_sortable_plugin_i18n.taxonomies ) ) {
+			$( taxonomies_sortable_plugin_i18n.taxonomies.join( ',' ) ).each( function() {
 				var $wrapper = $( this ).find( '.tagchecklist' ),
 					$the_tags = $( this ).find( '.the-tags' );
 				$wrapper.sortable( {
@@ -32,43 +32,6 @@
 				} );
 			} );
 		}
-
-		// Options screen.
-		// Three state button.
-		/*
-		var $check = $( 'input.taxonomies-sortables[type=checkbox]' ), el;
-		$check.data( 'checked', 0 ).click( function( e ) {
-			el = $(this);
-			switch(el.data('checked')) {
-				// unchecked, going indeterminate
-				case 0:
-					el.data('checked',1);
-					el.prop('indeterminate',true);
-					break;
-
-				// indeterminate, going checked
-				case 1:
-					el.data('checked',2);
-					el.prop('indeterminate',false);
-					el.prop('checked',true);
-					break;
-
-				// checked, going unchecked
-				default:
-					el.data('checked',0);
-					el.prop('indeterminate',false);
-					el.prop('checked',false);
-			}
-		});
-		$( 'input.taxonomies-sortable[type=checkbox]' ).on( 'click', function () {
-			if ( this.readOnly ) {
-				this.checked = this.readOnly = false;
-			}
-			else if ( ! this.checked ) {
-				this.readOnly = this.indeterminate = true;
-			}
-		});
-		*/
 
 		// Tab managements.
 		$( document ).ready( function() {
