@@ -10,6 +10,16 @@ This section describes how to install the plugin and get it working.
 1. Activate the plugin through the _Plugins_ screen in WordPress.
 1. Use the _Settings->Taxonomies_ Sortable screen to configure the plugin by selecting non-hierarchical taxonomies you want to make sortable.
 
+# Usage
+
+Once the plugin is installed you can make a taxonomy sortable in the following ways:
+
+* Programmatically, by adding `'sortable' => true` argument in `register_taxonomy()`.
+* Programmatically, by using `taxonomies_sortables` filter below.
+* With the administration plugin setting page.
+
+Note that making a taxonomy sortable, implicitly means also setting `sort => true` for that taxonomy.
+
 # Hooks
 
 ## `taxonomies_sortables`
@@ -22,7 +32,7 @@ apply_filters( 'taxonomies_sortables', array $taxonomies )
 
 ## `taxonomies_sortables_admin_settings`
 
-Filter allowing to set display or not plugin settings page in the administration.
+Filter allowing to display or not the plugin settings page in the administration.
 
 ```php
 apply_filters( 'taxonomies_sortables_admin_settings', boolean $display )
