@@ -159,7 +159,7 @@ class Admin {
 		$tax_objs = get_object_taxonomies( $post_type, 'objects' );
 		$sortable_taxonomies = array();
 		foreach ( $tax_objs as $taxonomy ) {
-			if ( ! $taxonomy->hierarchical && isset( $taxonomy->sortable ) ) {
+			if ( ! $taxonomy->hierarchical && isset( $taxonomy->sortable ) && $taxonomy->sortable ) {
 				$sortable_taxonomies[] = '#' . $taxonomy->name . '.tagsdiv';
 			}
 		}
