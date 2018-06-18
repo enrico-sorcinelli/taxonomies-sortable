@@ -1,0 +1,59 @@
+/* CSS admin */
+
+/* Post edit screens styles */
+
+.tagchecklist.ui-sortable li {
+	cursor: move;
+	border-radius: 10px;
+	border: 1px transparent dashed;
+	white-space: nowrap;
+	/*background-color: #efefef;
+	padding-right: 2px;*/
+}
+
+.tagchecklist.ui-sortable li.ui-sortable-placeholder {
+	border: 1px #ccc dashed;
+	visibility: visible !important;
+	background-color: transparent;
+	white-space: nowrap;
+}
+
+.tagchecklist.ui-sortable li.ui-sortable-helper {
+	border: 1px #ccc dashed;
+	visibility: visible !important;
+	background-color: #fff;
+	white-space: nowrap;
+}
+
+/* Options screen styles */
+
+/* Tabs management - start */
+
+h2.nav-tab-wrapper.taxonomies-sortable {
+	padding: inherit !important;
+}
+
+section.taxonomies-sortable {
+	display: none;
+}
+
+section.taxonomies-sortable:first-of-type {
+	display: block;
+}
+
+h2.nav-tab-wrapper a.taxonomies-sortable {
+	cursor: pointer;
+}
+/* Tabs management - end */
+
+input.taxonomies-sortable[readonly] {
+	background-color: #fff;
+}
+
+input.taxonomies-sortable[readonly]:before{
+	content: "\f460";
+	font: 400 21px/1 dashicons;
+	margin: -3px 0 0 -4px;
+	vertical-align: middle;
+	display: inline-block;
+}
