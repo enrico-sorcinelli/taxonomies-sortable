@@ -27,36 +27,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Taxonomies_Sortable' ) ) {
 
 	// Plugins constants.
-	define( 'TAXONOMIES_SORTABLES_PLUGIN_VERSION', '0.0.1' );
-	define( 'TAXONOMIES_SORTABLES_PLUGIN_BASEDIR', dirname( __FILE__ ) );
-	define( 'TAXONOMIES_SORTABLES_PLUGIN_BASEURL', plugin_dir_url( __FILE__ ) );
+	define( 'TAXONOMIES_SORTABLE_PLUGIN_VERSION', '0.0.1' );
+	define( 'TAXONOMIES_SORTABLE_PLUGIN_BASEDIR', dirname( __FILE__ ) );
+	define( 'TAXONOMIES_SORTABLE_PLUGIN_BASEURL', plugin_dir_url( __FILE__ ) );
 
 	// Enable debug prints on error_log (only when WP_DEBUG is true).
-	if ( ! defined( 'TAXONOMIES_SORTABLES_PLUGIN_DEBUG' ) ) {
-		define( 'TAXONOMIES_SORTABLES_PLUGIN_DEBUG', false );
+	if ( ! defined( 'TAXONOMIES_SORTABLE_PLUGIN_DEBUG' ) ) {
+		define( 'TAXONOMIES_SORTABLE_PLUGIN_DEBUG', false );
 	}
 
-	require_once TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/class-taxonomies-sortable.php';
+	require_once TAXONOMIES_SORTABLE_PLUGIN_BASEDIR . '/php/class-taxonomies-sortable.php';
 
 	/**
 	 * Init the plugin.
 	 *
-	 * Define TAXONOMIES_SORTABLES_PLUGIN_DEBUG to false in your <i>wp-config.php</i> to disable
+	 * Define TAXONOMIES_SORTABLE_PLUGIN_DEBUG to false in your <i>wp-config.php</i> to disable
 	 *
 	 * @return void
 	 */
-	function taxonomies_sortables_plugin_init() {
+	function taxonomies_sortable_plugin_init() {
 
-		if ( defined( 'TAXONOMIES_SORTABLES_PLUGIN_AUTOENABLE' ) && TAXONOMIES_SORTABLES_PLUGIN_AUTOENABLE === false ) {
+		if ( defined( 'TAXONOMIES_SORTABLE_PLUGIN_AUTOENABLE' ) && TAXONOMIES_SORTABLE_PLUGIN_AUTOENABLE === false ) {
 			return;
 		}
 
 		// Instantiate plugin class and add it to the set of globals.
-		$GLOBALS['taxonomies_sortable_plugin'] = Taxonomies_Sortable::get_instance( array( 'debug' => TAXONOMIES_SORTABLES_PLUGIN_DEBUG && WP_DEBUG ) );
+		$GLOBALS['taxonomies_sortable_plugin'] = Taxonomies_Sortable::get_instance( array( 'debug' => TAXONOMIES_SORTABLE_PLUGIN_DEBUG && WP_DEBUG ) );
 	}
 
 	// Activate the plugin once all plugin have been loaded.
-	add_action( 'plugins_loaded', 'taxonomies_sortables_plugin_init' );
+	add_action( 'plugins_loaded', 'taxonomies_sortable_plugin_init' );
 
 	// Uninstall hooks.
 	register_uninstall_hook( __FILE__, array( 'Taxonomies_Sortable', 'pluginUninstall' ) );

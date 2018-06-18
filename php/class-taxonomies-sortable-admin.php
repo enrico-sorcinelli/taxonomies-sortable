@@ -69,7 +69,7 @@ class Admin {
 	 */
 	public function setupMenu() {
 
-		$admin_menu_capability = is_super_admin() ? 'manage_options' : 'taxonomies_sortables_plugin_manage_options';
+		$admin_menu_capability = is_super_admin() ? 'manage_options' : 'taxonomies_sortable_plugin_manage_options';
 
 		/**
 		 * Filter to allow display plugin settings page.
@@ -78,7 +78,7 @@ class Admin {
 		 *
 		 * @return boolean
 		 */
-		if ( apply_filters( 'taxonomies_sortables_admin_settings', true ) ) {
+		if ( apply_filters( 'taxonomies_sortable_admin_settings', true ) ) {
 			$this->admin_pages['general_settings'] = add_options_page( __( 'Taxonomies Sortable settings', 'taxonomies-sortable' ), __( 'Taxonomies Sortable', 'taxonomies-sortable' ), 'manage_options', $this->prefix . 'general_settings', array( $this, 'pageGeneralSettings' ) );
 		}
 	}
@@ -133,7 +133,7 @@ class Admin {
 
 		wp_enqueue_style(
 			$this->prefix . 'css',
-			TAXONOMIES_SORTABLES_PLUGIN_BASEURL . 'assets/css/admin.css',
+			TAXONOMIES_SORTABLE_PLUGIN_BASEURL . 'assets/css/admin.css',
 			array()
 		);
 	}
@@ -149,9 +149,9 @@ class Admin {
 
 		wp_enqueue_script(
 			$this->prefix . 'js',
-			TAXONOMIES_SORTABLES_PLUGIN_BASEURL . 'assets/js/admin.js',
+			TAXONOMIES_SORTABLE_PLUGIN_BASEURL . 'assets/js/admin.js',
 			array(),
-			TAXONOMIES_SORTABLES_PLUGIN_VERSION,
+			TAXONOMIES_SORTABLE_PLUGIN_VERSION,
 			false
 		);
 
@@ -166,7 +166,7 @@ class Admin {
 
 		// Localization.
 		wp_localize_script( $this->prefix . 'js', $this->prefix . 'i18n', array(
-			'_plugin_url' => TAXONOMIES_SORTABLES_PLUGIN_BASEURL,
+			'_plugin_url' => TAXONOMIES_SORTABLE_PLUGIN_BASEURL,
 			'msgs' => array(),
 			'taxonomies' => $sortable_taxonomies,
 		) );
@@ -179,7 +179,7 @@ class Admin {
 	 */
 	public function pageGeneralSettings() {
 
-		\Plugin_Utils::includeTemplate( TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/adminpages/general-settings.php', array(
+		\Plugin_Utils::includeTemplate( TAXONOMIES_SORTABLE_PLUGIN_BASEDIR . '/php/adminpages/general-settings.php', array(
 			'prefix' => $this->prefix,
 			'settings' => $this->plugin_options,
 		) );

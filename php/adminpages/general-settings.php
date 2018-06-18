@@ -73,7 +73,7 @@ if ( ! empty( $registered_taxonomies ) ) {
 <?php submit_button(); ?>
 </form>
 			</div>
-<?php \Plugin_Utils::includeTemplate( TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/adminpages/credits.php', array( 'prefix' => $params['prefix'] ) ); ?>
+<?php \Plugin_Utils::includeTemplate( TAXONOMIES_SORTABLE_PLUGIN_BASEDIR . '/php/adminpages/credits.php', array( 'prefix' => $params['prefix'] ) ); ?>
 		</div><!-- /#post-body -->
 	</div><!-- /#poststuff -->
 </div><!--/.wrap-->

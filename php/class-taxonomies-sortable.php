@@ -36,7 +36,7 @@ class Taxonomies_Sortable {
 	 *
 	 * @var string
 	 */
-	private $prefix = 'taxonomies_sortables_plugin_';
+	private $prefix = 'taxonomies_sortable_plugin_';
 
 	/**
 	 * Singleton instance.
@@ -79,8 +79,8 @@ class Taxonomies_Sortable {
 		// Add sort filter for sortable taxonomies.
 		add_filter( 'wp_get_object_terms_args', array( $this, 'wpGgetOobjectTermsArgsFilter' ), 10, 3 );
 
-		// Make taxonomies sortables.
-		add_filter( 'register_taxonomy_args', array( $this, 'makeTaxonomiesSortables' ), 10, 2 );
+		// Make taxonomies sortable.
+		add_filter( 'register_taxonomy_args', array( $this, 'makeTaxonomiesSortable' ), 10, 2 );
 	}
 
 	/**
@@ -107,10 +107,10 @@ class Taxonomies_Sortable {
 
 		// Plugin classes.
 		if ( ! class_exists( 'Plugin_Utils' ) ) {
-			require_once TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/class-plugin-utils.php';
+			require_once TAXONOMIES_SORTABLE_PLUGIN_BASEDIR . '/php/class-plugin-utils.php';
 		}
 		if ( is_admin() ) {
-			require_once TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/class-taxonomies-sortable-admin.php';
+			require_once TAXONOMIES_SORTABLE_PLUGIN_BASEDIR . '/php/class-taxonomies-sortable-admin.php';
 		}
 	}
 
@@ -122,7 +122,7 @@ class Taxonomies_Sortable {
 	 *
 	 * @return array
 	 */
-	public function makeTaxonomiesSortables( $args, $taxonomy ) {
+	public function makeTaxonomiesSortable( $args, $taxonomy ) {
 		if ( in_array( $taxonomy, $this->plugin_options['taxonomies'], true ) ) {
 			$args['sortable'] = true;
 		}
@@ -183,7 +183,7 @@ class Taxonomies_Sortable {
 		 *
 		 * @return array
 		 */
-		$settings['taxonomies'] = apply_filters( 'taxonomies_sortables', $settings['taxonomies'] );
+		$settings['taxonomies'] = apply_filters( 'taxonomies_sortable', $settings['taxonomies'] );
 
 		return $settings;
 	}
