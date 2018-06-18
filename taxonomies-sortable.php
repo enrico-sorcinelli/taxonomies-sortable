@@ -28,7 +28,6 @@ if ( ! class_exists( 'Taxonomies_Sortable' ) ) {
 
 	// Plugins constants.
 	define( 'TAXONOMIES_SORTABLES_PLUGIN_VERSION', '0.0.1' );
-	define( 'TAXONOMIES_SORTABLES_PLUGIN_DBVERSION', '2017080401' );
 	define( 'TAXONOMIES_SORTABLES_PLUGIN_BASEDIR', dirname( __FILE__ ) );
 	define( 'TAXONOMIES_SORTABLES_PLUGIN_BASEURL', plugin_dir_url( __FILE__ ) );
 
@@ -59,8 +58,6 @@ if ( ! class_exists( 'Taxonomies_Sortable' ) ) {
 	// Activate the plugin once all plugin have been loaded.
 	add_action( 'plugins_loaded', 'taxonomies_sortables_plugin_init' );
 
-	// Activation/Deactivation/Uninstall hooks.
-	register_activation_hook( __FILE__, array( 'Taxonomies_Sortable', 'pluginActivation' ) );
-	register_deactivation_hook( __FILE__, array( 'Taxonomies_Sortable', 'pluginDeactivation' ) );
+	// Uninstall hooks.
 	register_uninstall_hook( __FILE__, array( 'Taxonomies_Sortable', 'pluginUninstall' ) );
 }
