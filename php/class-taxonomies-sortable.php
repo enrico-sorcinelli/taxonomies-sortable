@@ -125,6 +125,8 @@ class Taxonomies_Sortable {
 	public function makeTaxonomiesSortables( $args, $taxonomy ) {
 		if ( in_array( $taxonomy, $this->plugin_options['taxonomies'], true ) ) {
 			$args['sortable'] = true;
+		}
+		if ( isset( $args['sortable'] ) && $args['sortable'] ) {
 			$args['sort'] = true;
 		}
 		return $args;
