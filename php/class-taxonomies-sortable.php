@@ -76,9 +76,6 @@ class Taxonomies_Sortable {
 			));
 		}
 
-		// Setup DB.
-		add_action( 'init', array( $this, 'setupDB' ), 0 );
-
 		// Add sort filter for sortable taxonomies.
 		add_filter( 'wp_get_object_terms_args', array( $this, 'wpGgetOobjectTermsArgsFilter' ), 10, 3 );
 
@@ -104,14 +101,9 @@ class Taxonomies_Sortable {
 	 * This function will include core files before the theme's functions.php
 	 * file has been excecuted.
 	 *
-	 *  @type        action (plugins_loaded)
+	 * @return void
 	 */
 	public function requireComponents() {
-
-		global $pagenow;
-
-		// For plugin checks.
-		require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 		// Plugin classes.
 		if ( ! class_exists( 'Plugin_Utils' ) ) {
@@ -120,22 +112,6 @@ class Taxonomies_Sortable {
 		if ( is_admin() ) {
 			require_once TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/class-taxonomies-sortable-admin.php';
 		}
-		if ( defined( 'XMLRPC_REQUEST' ) ) {
-			require_once TAXONOMIES_SORTABLES_PLUGIN_BASEDIR . '/php/class-taxonomies-sortable-xmlrpc.php';
-		}
-
-		// Check for some plugin.
-		if ( ! is_plugin_active( 'foo-plugin/foo.plugin.php' ) ) {
-		}
-	}
-
-	/**
-	 * Setup DB custom tables.
-	 *
-	 * @return void
-	 */
-	public function setupDB() {
-		global $wpdb;
 	}
 
 	/**
@@ -172,22 +148,6 @@ class Taxonomies_Sortable {
 	}
 
 	/**
-	 * Plugin activation hook.
-	 *
-	 * @return void
-	 */
-	public static function pluginActivation() {
-	}
-
-	/**
-	 * Plugin deactivation hook.
-	 *
-	 * @return void
-	 */
-	public static function pluginDeactivation() {
-	}
-
-	/**
 	 * Plugin uninstall hook.
 	 * Delete wp_options entries only when plugin deactivated and deleted.
 	 *
@@ -202,7 +162,7 @@ class Taxonomies_Sortable {
 
 	/**
 	 * Get plugin options settings.
-
+	 *
 	 * @return array
 	 */
 	private function getPluginOptions() {
