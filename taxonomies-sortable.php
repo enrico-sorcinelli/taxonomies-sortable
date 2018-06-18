@@ -10,7 +10,7 @@
  * Plugin URI:  https://github.com/enrico-sorcinelli/taxonomies-sortable
  * Description: A WordPress Taxonomies Sortable
  * Author:      Enrico Sorcinelli
- * Author URI:  https://github.com/enrico-sorcinelli/taxonomies-sortable
+ * Author URI:  https://github.com/enrico-sorcinelli/taxonomies-sortable/graphs/contributors
  * Text Domain: taxonomies-sortable
  * Domain Path: /languages/
  * Version:     0.0.1
