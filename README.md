@@ -40,14 +40,13 @@ Currently no, even if the Gutenberg support is under development.
 
 The taxonomy terms sorting drag&drop in action.
 
-![Admin metabox](https://raw.github.com/enrico-sorcinelli/taxonomies-sortables/master/assets-wp/screenshot-1.png)
-
+![Admin metabox](https://raw.githubusercontent.com/enrico-sorcinelli/taxonomies-sortable/master/assets-wp/screenshot-1.png)
 
 ### Plugin settings ###
 
 The plugin settings page.
 
-![Plugin settings](https://raw.github.com/enrico-sorcinelli/taxonomies-sortables/master/assets-wp/screenshot-2.png)
+![Plugin settings](https://raw.githubusercontent.com/enrico-sorcinelli/taxonomies-sortable/master/assets-wp/screenshot-2.png)
 
 # License: GPLv2 #
 
