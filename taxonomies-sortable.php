@@ -13,7 +13,7 @@
  * Author URI:  https://github.com/enrico-sorcinelli/taxonomies-sortable/graphs/contributors
  * Text Domain: taxonomies-sortable
  * Domain Path: /languages/
- * Version:     0.0.1
+ * Version:     1.0.0
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Taxonomies_Sortable' ) ) {
 
 	// Plugins constants.
-	define( 'TAXONOMIES_SORTABLE_PLUGIN_VERSION', '0.0.1' );
+	define( 'TAXONOMIES_SORTABLE_PLUGIN_VERSION', '1.0.0' );
 	define( 'TAXONOMIES_SORTABLE_PLUGIN_BASEDIR', dirname( __FILE__ ) );
 	define( 'TAXONOMIES_SORTABLE_PLUGIN_BASEURL', plugin_dir_url( __FILE__ ) );
 
