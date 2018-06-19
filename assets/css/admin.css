@@ -7,8 +7,6 @@
 	border-radius: 10px;
 	border: 1px transparent dashed;
 	white-space: nowrap;
-	/*background-color: #efefef;
-	padding-right: 2px;*/
 }
 
 .tagchecklist.ui-sortable li.ui-sortable-placeholder {
