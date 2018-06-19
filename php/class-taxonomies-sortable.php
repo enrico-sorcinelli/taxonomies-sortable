@@ -135,7 +135,7 @@ class Taxonomies_Sortable {
 		}
 
 		// In order to force wp_get_object_terms() loop in wp-includes/taxonomy.php:1975.
-		$args['args']['_tax'] = $taxonomy ;
+		$args['args']['_tax'] = $taxonomy;
 
 		return $args;
 	}
