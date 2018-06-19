@@ -3,7 +3,7 @@ Contributors: enrico.sorcinelli
 Tags: taxonomy, admin
 Requires at least: 4.4
 Requires PHP: 5.2.4
-Tested up to: 4.9
+Tested up to: 4.9.6
 Stable tag: 1.0.0
 License: GPLv2 or later
 
