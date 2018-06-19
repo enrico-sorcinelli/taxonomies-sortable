@@ -123,12 +123,20 @@ class Taxonomies_Sortable {
 	 * @return array
 	 */
 	public function makeTaxonomiesSortable( $args, $taxonomy ) {
+
 		if ( in_array( $taxonomy, $this->plugin_options['taxonomies'], true ) ) {
 			$args['sortable'] = true;
 		}
-		if ( isset( $args['sortable'] ) && $args['sortable'] ) {
+		if ( isset( $args['sortable'] ) && true === $args['sortable'] ) {
 			$args['sort'] = true;
 		}
+		else {
+			$args['sortable']  = false;
+		}
+
+		// In order to force wp_get_object_terms() loop in wp-includes/taxonomy.php:1975.
+		$args['args']['_tax'] = $taxonomy ;
+
 		return $args;
 	}
 
@@ -142,10 +150,15 @@ class Taxonomies_Sortable {
 	 * @return array
 	 */
 	public function wpGgetOobjectTermsArgsFilter( $args, $object_ids, $taxonomies ) {
+
 		$t = get_taxonomy( $taxonomies[0] );
-		if ( isset( $t->sortable ) && $t->sortable ) {
+		if ( isset( $t->sortable ) && true === $t->sortable ) {
 			$args['orderby'] = 'term_order';
 		}
+		else {
+			unset( $args['orderby'] );
+		}
+
 		return $args;
 	}
 
