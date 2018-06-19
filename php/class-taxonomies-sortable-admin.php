@@ -1,4 +1,10 @@
 <?php
+/**
+ * Plugin administration class.
+ *
+ * @package taxonomies-sortable
+ * @author Enrico Sorcinelli
+ */
 
 namespace Taxonomies_Sortable;
 
