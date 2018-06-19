@@ -16,16 +16,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Admin {
 
 	/**
-	 * @var array   $admin_pages
-	 * @var string  $prefix
-	 * @var array   $plugin_options
+	 * @var array
 	 */
-	private $admin_pages = array(), $prefix, $plugin_options;
+	private $admin_pages = array();
+
+	/**
+	 * @var string
+	 */
+	private $prefix;
+
+	/**
+	 * @var array
+	 */
+	private $plugin_options;
 
 	/**
 	 * Construct the plugin.
 	 *
-	 * @param array $args. Avalaible keys are:
+	 * @param array $args Avalaible keys are
 	 *  - prefix string
 	 *  - debug boolean
 	 *
@@ -36,13 +44,13 @@ class Admin {
 		// Set object property.
 		$this->debug = isset( $args['debug'] ) ? $args['debug'] : false;
 		foreach ( array( 'prefix', 'plugin_options' ) as $property ) {
-			$this->$property = $args[$property];
+			$this->$property = $args[ $property ];
 		}
 
 		// This plugin only runs in admin, but we need it initialized on init.
 		add_action( 'init', array( $this, 'init' ) );
 	}
-	
+
 	/**
 	 * Initialize the plugin: setup menu, settings, add filters, actions,
 	 * scripts, styles and so on.
@@ -97,7 +105,7 @@ class Admin {
 		if ( ! \Plugin_Utils::isAjaxRequest() ) {
 
 			// Screens where to enqueue assets.
-			$admin_pages = array_merge ( array( 'post.php', 'post-new.php' ), array_values( $this->admin_pages ) );
+			$admin_pages = array_merge( array( 'post.php', 'post-new.php' ), array_values( $this->admin_pages ) );
 
 			// Add CSS to post pages.
 			foreach ( $admin_pages as $page ) {
