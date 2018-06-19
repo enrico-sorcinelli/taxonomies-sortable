@@ -39,3 +39,7 @@ dwsync.xml
 intermediate
 cache
 tmp
+
+/composer.lock
+/vendor
+/node_modules
