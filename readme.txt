@@ -32,21 +32,17 @@ Note that making a taxonomy sortable, implicitly means also setting `sort => tru
 
 == Hooks ==
 
-= `taxonomies_sortable` =
+**`taxonomies_sortable`**
 
 Filter allowing to programmatically set sortable taxonomies.
 
-```php
-apply_filters( 'taxonomies_sortable', array $taxonomies )
-```
+`apply_filters( 'taxonomies_sortable', array $taxonomies )`
 
-= `taxonomies_sortable_admin_settings` =
+**`taxonomies_sortable_admin_settings`**
 
 Filter allowing to display or not the plugin settings page in the administration.
 
-```php
-apply_filters( 'taxonomies_sortable_admin_settings', boolean $display )
-```
+`apply_filters( 'taxonomies_sortable_admin_settings', boolean $display )`
 
 == Frequently Asked Questions ==
 
