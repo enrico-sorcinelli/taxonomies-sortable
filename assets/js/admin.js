@@ -1,7 +1,7 @@
 /**
  * @file This file contains Taxonomies Sortable JavaScript
  * @author Enrico Sorcinelli
- * @version 0.0.1
+ * @version 1.0.1
  * @title Taxonomies Sortable
  */
 
