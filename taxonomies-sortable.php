@@ -13,7 +13,7 @@
  * Author URI:  https://github.com/enrico-sorcinelli/taxonomies-sortable/graphs/contributors
  * Text Domain: taxonomies-sortable
  * Domain Path: /languages/
- * Version:     1.0.0
+ * Version:     1.0.1
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Taxonomies_Sortable' ) ) {
 
 	// Plugins constants.
-	define( 'TAXONOMIES_SORTABLE_PLUGIN_VERSION', '1.0.0' );
+	define( 'TAXONOMIES_SORTABLE_PLUGIN_VERSION', '1.0.1' );
 	define( 'TAXONOMIES_SORTABLE_PLUGIN_BASEDIR', dirname( __FILE__ ) );
 	define( 'TAXONOMIES_SORTABLE_PLUGIN_BASEURL', plugin_dir_url( __FILE__ ) );
 
@@ -41,7 +41,8 @@ if ( ! class_exists( 'Taxonomies_Sortable' ) ) {
 	/**
 	 * Init the plugin.
 	 *
-	 * Define TAXONOMIES_SORTABLE_PLUGIN_DEBUG to false in your <i>wp-config.php</i> to disable
+	 * Define TAXONOMIES_SORTABLE_PLUGIN_AUTOENABLE to `false` in your
+	 * _wp-config.php_ to disable.
 	 *
 	 * @return void
 	 */
