@@ -61,7 +61,7 @@ class Plugin_Utils {
 	 *               value returned by template if it doesn't return a scalar
 	 *               (i.e an object).
 	 */
-	public function sincludeTemplate( $template, $params = array() ) {
+	public static function sincludeTemplate( $template, $params = array() ) {
 
 		// WP globals.
 		global $wp_query, $wp_style, $wp_registered_sidebars, $sidebars_widgets, $wp_registered_widgets, $posts, $post, $wp_did_header, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
