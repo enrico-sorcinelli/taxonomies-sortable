@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [1.0.1] - 2018-06-22
 ### Fixed
- - Static method.
- - Unistall plugin hook.
+ - Uninstall plugin hook.
+ - Fixed static method declaration.
  - `TAXONOMIES_SORTABLE_PLUGIN_AUTOENABLE` constant typo and added documentation.
 
 ### Changed
