@@ -22,16 +22,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Admin {
 
 	/**
+	 * Admin pages name.
+	 *
 	 * @var array
 	 */
 	private $admin_pages = array();
 
 	/**
+	 * Prefix.
+	 *
 	 * @var string
 	 */
 	private $prefix;
 
 	/**
+	 * Plugin options.
+	 *
 	 * @var array
 	 */
 	private $plugin_options;
@@ -39,9 +45,12 @@ class Admin {
 	/**
 	 * Construct the plugin.
 	 *
-	 * @param array $args Avalaible keys are
-	 *  - prefix string
-	 *  - debug boolean
+	 * @param array $args {
+	 *     Array of arguments for constructor.
+	 *
+	 *     @type string  $prefix
+	 *     @type boolean $debug  Default `false`.
+	 * }
 	 *
 	 * @return object
 	 */
@@ -171,6 +180,7 @@ class Admin {
 
 		// Get sortable taxonomies for current post type.
 		$tax_objs = get_object_taxonomies( $post_type, 'objects' );
+
 		$sortable_taxonomies = array();
 		foreach ( $tax_objs as $taxonomy ) {
 			if ( ! $taxonomy->hierarchical && isset( $taxonomy->sortable ) && $taxonomy->sortable ) {
@@ -181,8 +191,8 @@ class Admin {
 		// Localization.
 		wp_localize_script( $this->prefix . 'js', $this->prefix . 'i18n', array(
 			'_plugin_url' => TAXONOMIES_SORTABLE_PLUGIN_BASEURL,
-			'msgs' => array(),
-			'taxonomies' => $sortable_taxonomies,
+			'msgs'        => array(),
+			'taxonomies'  => $sortable_taxonomies,
 		) );
 	}
 
@@ -194,7 +204,7 @@ class Admin {
 	public function pageGeneralSettings() {
 
 		\Plugin_Utils::includeTemplate( TAXONOMIES_SORTABLE_PLUGIN_BASEDIR . '/php/adminpages/general-settings.php', array(
-			'prefix' => $this->prefix,
+			'prefix'   => $this->prefix,
 			'settings' => $this->plugin_options,
 		) );
 	}
