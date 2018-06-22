@@ -59,7 +59,7 @@ Currently no, even if the Gutenberg support is under development.
 
 = 1.0.1 =
 
-This version fixes unistall plugin hook.
+This version fixes uninstall plugin hook.
 
 == Changelog ==
 
