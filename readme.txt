@@ -4,7 +4,7 @@ Tags: taxonomy, admin
 Requires at least: 4.4
 Requires PHP: 5.2.4
 Tested up to: 4.9.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 
 Allows to sort taxonomy terms associated to objects.
@@ -54,6 +54,12 @@ Currently no, even if the Gutenberg support is under development.
 
 1. The taxonomy tags metabox drag&drop in action.
 2. The setting plugin page.
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+
+This version fixes unistall plugin hook.
 
 == Changelog ==
 
