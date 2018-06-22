@@ -36,7 +36,7 @@ class Taxonomies_Sortable {
 	 *
 	 * @var string
 	 */
-	private $prefix = 'taxonomies_sortable_plugin_';
+	private static $prefix = 'taxonomies_sortable_plugin_';
 
 	/**
 	 * Singleton instance.
@@ -48,8 +48,11 @@ class Taxonomies_Sortable {
 	/**
 	 * Plugin class constructor.
 	 *
-	 * @param array $args Available keys are:
-	 *  - debug boolean Default value is `false`.
+	 * @param array $args {
+	 *     Array of arguments for constructor.
+	 *
+	 *     @type boolean $debug Default `false`.
+	 * }
 	 *
 	 *  @return object
 	 */
@@ -70,9 +73,9 @@ class Taxonomies_Sortable {
 		// Create plugin admin object.
 		if ( is_admin() ) {
 			$this->_admin = new \Taxonomies_Sortable\Admin( array(
-				'prefix' => $this->prefix,
+				'prefix'         => self::$prefix,
 				'plugin_options' => $this->plugin_options,
-				'debug' => $this->settings['debug'],
+				'debug'          => $this->settings['debug'],
 			));
 		}
 
@@ -131,7 +134,7 @@ class Taxonomies_Sortable {
 			$args['sort'] = true;
 		}
 		else {
-			$args['sortable']  = false;
+			$args['sortable'] = false;
 		}
 
 		// In order to force wp_get_object_terms() loop in wp-includes/taxonomy.php:1975.
@@ -169,9 +172,9 @@ class Taxonomies_Sortable {
 	 * @return void
 	 */
 	public static function pluginUninstall() {
-		$options = get_option( 'radio_button_for_taxonomies_options', true );
+		$options = get_option( self::$prefix . 'general_settings', true );
 		if ( isset( $options['delete'] ) && $options['delete'] ) {
-			delete_option( 'radio_button_for_taxonomies_options' );
+			delete_option( self::$prefix . 'general_settings' );
 		}
 	}
 
@@ -182,9 +185,9 @@ class Taxonomies_Sortable {
 	 */
 	private function getPluginOptions() {
 		$settings = wp_parse_args(
-			get_option( $this->prefix . 'general_settings', array() ),
+			get_option( self::$prefix . 'general_settings', array() ),
 			array(
-				'taxonomies' => array(),
+				'taxonomies'             => array(),
 				'remove_plugin_settings' => false,
 			)
 		);
