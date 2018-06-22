@@ -1,9 +1,13 @@
 <?php
 /**
- * Class Plugin_Utils
+ * Plugin utilities factory class.
  *
  * @package taxonomies-sortable
  * @author Enrico Sorcinelli
+ */
+
+/**
+ * Class Plugin_Utils
  */
 class Plugin_Utils {
 
